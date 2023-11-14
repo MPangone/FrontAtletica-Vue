@@ -1,0 +1,30 @@
+h1{
+  text-align: center;
+  color: black;
+  font-size: 40px;
+}
+
+.fotos {
+  display: block;
+}
+
+.fotos ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.fotos li {
+  margin-right: 270px; 
+}
+
+.fotos img {
+  width: 300px; 
+  height: 300px; 
+}
+
+.fotos p {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 20px;
+}
