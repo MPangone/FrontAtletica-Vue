@@ -28,7 +28,6 @@
             <li v-if="!isAuthenticated" class="nav-item">
               <router-link to="/cadastro" class="nav-link">Cadastrar</router-link>
             </li>
-            <!-- Altere para renderizar o botão de sair após o login -->
             <li v-if="isAuthenticated" class="nav-item">
               <button @click="logout" class="nav-link">Sair</button>
             </li>
@@ -53,8 +52,6 @@ export default {
       this.isAuthenticated = status;
     },
     logout() {
-      // Faça qualquer lógica necessária de logout aqui
-      // Exemplo: Limpar informações de autenticação, redirecionar para a página de login
       this.isAuthenticated = false;
       this.$router.push('/login');
     },

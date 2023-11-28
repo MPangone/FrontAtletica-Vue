@@ -35,14 +35,10 @@ export default {
   },
   methods: {
     registrar() {
-      // Lógica de cadastro aqui
-      // Exemplo: Armazena as informações de cadastro no localStorage
       this.storeUserInformation(this.usuario, this.senha, this.ra);
-      // Exemplo de redirecionamento após o cadastro
       this.$router.push('/login');
     },
     storeUserInformation(usuario, senha, ra) {
-      // Armazena as informações de cadastro no localStorage
       const userInformation = {
         usuario,
         senha,

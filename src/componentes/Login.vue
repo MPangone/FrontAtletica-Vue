@@ -25,52 +25,18 @@
 </template>
 
 <script>
-// export default {
-//   data() {
-//     return {
-//       usuario: '',
-//       senha: '',
-//     };
-//   },
-
-//   methods: {
-//     login() {
-//       // Lógica de autenticação aqui
-//       const storedUserInformation = localStorage.getItem('userInformation');
-
-//       if (storedUserInformation) {
-//         const userInformation = JSON.parse(storedUserInformation);
-
-//         if (this.usuario === userInformation.usuario && this.senha === userInformation.senha) {
-//           // Defina isAuthenticated como true após o login bem-sucedido
-//           this.$emit('authenticated', true);
-
-//           // Redirecione para a página "esporte" em vez de "bem-vindo"
-//           this.$router.push({ name: 'esporte' });
-//         } else {
-//           alert('Credenciais inválidas. Tente novamente.');
-//         }
-//       } else {
-//         alert('Nenhuma informação de cadastro encontrada. Faça o cadastro primeiro.');
-//       }
-//     },
-//   },
-// };
 export default {
 
   methods: {
     login() {
-      // Lógica de autenticação aqui
       const storedUserInformation = localStorage.getItem('userInformation');
 
       if (storedUserInformation) {
         const userInformation = JSON.parse(storedUserInformation);
 
         if (this.usuario === userInformation.usuario && this.senha === userInformation.senha) {
-          // Defina isAuthenticated como true após o login bem-sucedido
           this.$emit('authenticated', true);
 
-          // Redirecione para a página "esporte" em vez de "bem-vindo"
           this.$router.push({ name: 'esporte' });
         } else {
           alert('Credenciais inválidas. Tente novamente.');
