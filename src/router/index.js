@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Campeonato from '../views/Campeonatos.vue'
-import Festa from '../views/Festas.vue'
-import Esporte from '../views/Esportes.vue'
-import Atletica from '../views/Atleticas.vue'
+import Campeonato from '../views/Campeonatos.vue';
+import Festa from '../views/Festas.vue';
+import Esporte from '../views/Esportes.vue';
+import Atletica from '../views/Atleticas.vue';
+import Login from '../componentes/Login.vue';
+import Cadastro from '../componentes/Cadastro.vue';
 
 const routes = [                                                                                       
   {
@@ -24,6 +26,16 @@ const routes = [
     path: '/atletica',
     name: 'atletica',
     component: Atletica
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/cadastro',
+    name: 'cadastro',
+    component: Cadastro
   }
 ];
 

@@ -1,20 +1,22 @@
 <template>
-  <div>
-    <h1>Festas</h1>
-  </div>
+  <div style="display: flex; justify-content: center; height: 100vh; background-color: #e0e0e0;">
+    <div>
+      <h1 style="color: #007bff;">Festas</h1>
+    </div>
 
-  <div class="fotos">
-    <ul>
-      <li v-for="festa in festas" :key="festa.id">
-        <img :src="`src/imgFesta/${festa.id}.png`" alt="">
-        <p>
-          Nome: {{ festa.nome }}     
-          <br>
-          Local: {{ festa.local }}     
-        </p>
-      </li>
-    </ul>
-  </div>
+    <div class="fotos">
+      <ul>
+        <li v-for="festa in festas" :key="festa.id">
+          <img :src="`src/imgFesta/${festa.id}.png`" alt="">
+          <p style="color: #333;">
+            Nome: {{ festa.nome }}
+            <br>
+            Local: {{ festa.local }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>  
 </template>
 
 <script setup>

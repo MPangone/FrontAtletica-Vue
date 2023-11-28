@@ -2,15 +2,8 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
       <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -28,11 +21,43 @@
               <router-link to="/festa" class="nav-link">Festas</router-link>
             </li>
           </ul>
+          <ul class="navbar-nav ms-auto">
+            <li v-if="!isAuthenticated" class="nav-item">
+              <router-link to="/login" class="nav-link">Login</router-link>
+            </li>
+            <li v-if="!isAuthenticated" class="nav-item">
+              <router-link to="/cadastro" class="nav-link">Cadastrar</router-link>
+            </li>
+            <!-- Altere para renderizar o botão de sair após o login -->
+            <li v-if="isAuthenticated" class="nav-item">
+              <button @click="logout" class="nav-link">Sair</button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
 
-    <router-view></router-view>
+    <router-view :isAuthenticated="isAuthenticated" @authenticated="updateAuthenticationStatus"></router-view>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isAuthenticated: false,
+    };
+  },
+  methods: {
+    updateAuthenticationStatus(status) {
+      this.isAuthenticated = status;
+    },
+    logout() {
+      // Faça qualquer lógica necessária de logout aqui
+      // Exemplo: Limpar informações de autenticação, redirecionar para a página de login
+      this.isAuthenticated = false;
+      this.$router.push('/login');
+    },
+  },
+};
+</script>

@@ -1,19 +1,21 @@
 <template>
-  <div>
-    <h1>Campeonatos</h1>
-  </div>
+  <div style="display: flex; justify-content: center; height: 100vh; background-color: #e0e0e0;">
+    <div>
+      <h1 style="color: #007bff;">Campeonatos</h1>
+    </div>
 
-  <div class="fotos">
-    <ul>
-      <li v-for="campeonato in campeonatos" :key="campeonato.id">
-        <img :src="`src/imgCampeonato/${campeonato.id}.png`" alt="">
-        <p>
-          Nome: {{ campeonato.nome }}   
-          <br>
-          Premiação: R$ {{ campeonato.premiacao }}       
-        </p>
-      </li>
-    </ul>
+    <div class="fotos">
+      <ul>
+        <li v-for="campeonato in campeonatos" :key="campeonato.id">
+          <img :src="`src/imgCampeonato/${campeonato.id}.png`" alt="">
+          <p style="color: #333;">
+            Nome: {{ campeonato.nome }}
+            <br>
+            Premiação: R$ {{ campeonato.premiacao }}
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 

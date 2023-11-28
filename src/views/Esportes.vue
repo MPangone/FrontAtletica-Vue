@@ -1,17 +1,19 @@
 <template>
-  <div>
-    <h1>Esportes</h1>
-  </div>
+  <div style="display: flex; justify-content: center; height: 100vh; background-color: #e0e0e0;">
+    <div>
+      <h1 style="color: #007bff;">Esportes</h1>
+    </div>
 
-  <div class="fotos">
-    <ul>
-      <li v-for="esporte in esportes" :key="esporte.id">
-        <img :src="`src/imgEsporte/${esporte.id}.png`" alt="">
-        <p>
-          Nome: {{ esporte.modalidade }}          
-        </p>
-      </li>
-    </ul>
+    <div class="fotos">
+      <ul>
+        <li v-for="esporte in esportes" :key="esporte.id">
+          <img :src="`src/imgEsporte/${esporte.id}.png`" alt="">
+          <p style="color: #333;">
+            Nome: {{ esporte.modalidade }}
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 

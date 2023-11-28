@@ -1,19 +1,21 @@
 <template>
-  <div>
-    <h1>Atleticas</h1>
-  </div>
+  <div style="display: flex; justify-content: center; height: 100vh; background-color: #e0e0e0;">
+    <div>
+      <h1 style="color: #007bff;">Atleticas</h1>
+    </div>
 
-  <div class="fotos">
-    <ul>
-      <li v-for="atletica in atleticas" :key="atletica.id">
-        <img :src="`src/imgAtletica/${atletica.id}.png`" alt="">
-        <p>
-          Nome: {{ atletica.nome }}
-          <br>
-          Curso: {{ atletica.curso }}
-        </p>
-      </li>
-    </ul>
+    <div class="fotos">
+      <ul>
+        <li v-for="atletica in atleticas" :key="atletica.id">
+          <img :src="`src/imgAtletica/${atletica.id}.png`" alt="">
+          <p style="color: #333;">
+            Nome: {{ atletica.nome }}
+            <br>
+            Curso: {{ atletica.curso }}
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
