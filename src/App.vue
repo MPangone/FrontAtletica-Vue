@@ -9,16 +9,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link to="/esporte" class="nav-link" aria-current="page">Esportes</router-link>
+              <router-link v-if="isAuthenticated" to="/esporte" class="nav-link" aria-current="page">Esportes</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/atletica" class="nav-link">Atleticas</router-link>
+              <router-link v-if="isAuthenticated" to="/atletica" class="nav-link">Atleticas</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/campeonato" class="nav-link">Campeonatos</router-link>
+              <router-link v-if="isAuthenticated" to="/campeonato" class="nav-link">Campeonatos</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/festa" class="nav-link">Festas</router-link>
+              <router-link v-if="isAuthenticated" to="/festa" class="nav-link">Festas</router-link>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">
@@ -30,6 +30,10 @@
             </li>
             <li v-if="isAuthenticated" class="nav-item">
               <button @click="logout" class="nav-link">Sair</button>
+            </li>
+            <li v-if="isAuthenticated" class="nav-item">
+              <!-- Botão de adicionar atletica aqui -->
+              <router-link to="/adicionar-atletica" class="nav-link">Adicionar Atletica</router-link>
             </li>
           </ul>
         </div>
