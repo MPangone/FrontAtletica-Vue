@@ -58,7 +58,7 @@ onMounted(async () => {
 
 .card-image {
   max-width: 100%;
-  height: 400px;
+  height: 300px;
   border-radius: 8px 8px 0 0;
 }
 
